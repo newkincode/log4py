@@ -14,6 +14,7 @@ from log4py import Logger
 ```python
 logger = Logger()
 logger.info("Hello World!")
+logger.save()
 ```
 ### 4. Result
 ```

@@ -15,31 +15,31 @@ class Logger:
     def debug(self, text):
         self.now = datetime.datetime.now()
         self.log.append(
-            f"{self.now.strftime('%Y-%m-%d %H-%M-%S')} - DEBUG - {text}")
+            f"\033[95m{self.now.strftime('%Y-%m-%d %H:%M:%S')} \033[36mDEBUG\033[0m {text}")
         print(self.log[len(self.log)-1])
 
     def info(self, text):
         self.now = datetime.datetime.now()
         self.log.append(
-            f"{self.now.strftime('%Y-%m-%d %H-%M-%S')} - INFO - {text}")
+            f"\033[95m{self.now.strftime('%Y-%m-%d %H:%M:%S')} \033[94mINFO\033[0m \033[0m{text}")
         print(self.log[len(self.log)-1])
 
     def warning(self, text):
         self.now = datetime.datetime.now()
         self.log.append(
-            f"{self.now.strftime('%Y-%m-%d %H-%M-%S')} - WARNING - {text}")
+            f"\033[95m{self.now.strftime('%Y-%m-%d %H:%M:%S')} \033[33mWARNING\033[0m \033[0m{text}")
         print(self.log[len(self.log)-1])
 
     def error(self, text):
         self.now = datetime.datetime.now()
         self.log.append(
-            f"{self.now.strftime('%Y-%m-%d %H-%M-%S')} - ERROR - {text}")
+            f"\033[95m{self.now.strftime('%Y-%m-%d %H:%M:%S')} \033[91mERROR\033[0m \033[0m{text}")
         print(self.log[len(self.log)-1])
 
     def critical(self, text):
         self.now = datetime.datetime.now()
         self.log.append(
-            f"{self.now.strftime('%Y-%m-%d %H-%M-%S')} - CRITICAL - {text}")
+            f"\033[95m{self.now.strftime('%Y-%m-%d %H:%M:%S')} \033[31mCRITICAL\033[0m \033[0m{text}")
         print(self.log[len(self.log)-1])
 
     def save(self):
@@ -57,3 +57,7 @@ class Logger:
             for i in self.log:
                 f.write(f"{i}\n")
             f.close
+
+logger = Logger()
+logger.info("Hello World!")
+logger.save()
