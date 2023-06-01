@@ -49,11 +49,11 @@ class Logger:
                 f"{os.getcwd()}\\log\\{self.now.strftime('%Y-%m-%d %H-%M-%S')}.log", "w")
             for i in self.log:
                 f.write(f"{i}\n")
-            f.close
+            f.close()
         except:
             os.mkdir("log")
             f = open(
                 f"{os.getcwd()}\\log\\{self.now.strftime('%Y-%m-%d %H-%M-%S')}.log", "w")
             for i in self.log:
                 f.write(f"{i}\n")
-            f.close
+            f.close()
