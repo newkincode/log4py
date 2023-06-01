@@ -57,7 +57,3 @@ class Logger:
             for i in self.log:
                 f.write(f"{i}\n")
             f.close
-
-logger = Logger()
-logger.info("Hello World!")
-logger.save()
