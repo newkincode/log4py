@@ -4,7 +4,7 @@
 ## Menual
 ### 1. Install
 ```bash
-$ wget https://github.com/newkincode/log4py/blob/main/log4py.py
+$ wget https://raw.githubusercontent.com/newkincode/log4py/main/log4py.py
 ```
 ### 2. Import
 ```python
