@@ -3,11 +3,12 @@ import os
 
 
 class Logger:
-    def __init__(self):
+    def __init__(self, log_save_path="log"):
         self.now = datetime.datetime.now()
         self.log = []
         self.log_print = True
         self.save_log = True
+        self.save_path = log_save_path
 
     def custem(self, text):
         self.now = datetime.datetime.now()
@@ -56,9 +57,9 @@ class Logger:
 
     def save(self):
         self.now = datetime.datetime.now()
-        os.chdir(os.getcwd())
+        os.chdir(os.getcw d())
         try:
-            os.chdir(os.path.realpath("log"))
+            os.chdir(os.path.realpath(self.save_path))
             f = open(
                 f"{self.now.strftime('%Y-%m-%d %H-%M-%S')}.log", "w"
             )
